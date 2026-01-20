@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All For Impact - Mockups</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f1e8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1a4d2e;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #6b7c71;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .designs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .design-link {
+            background: white;
+            padding: 35px 45px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #1a4d2e;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(26, 77, 46, 0.06);
+            border: 1px solid rgba(26, 77, 46, 0.08);
+        }
+
+        .design-link:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 20px rgba(26, 77, 46, 0.12);
+            border-color: #ff8c42;
+        }
+
+        .design-name {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #27764f;
+        }
+
+        .design-arrow {
+            font-size: 1.5rem;
+            color: #a8c4b5;
+            transition: all 0.3s;
+        }
+
+        .design-link:hover .design-arrow {
+            color: #ff8c42;
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                margin-bottom: 50px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .design-link {
+                padding: 28px 35px;
+            }
+
+            .design-name {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ALL FOR IMPACT</h1>
+            <p class="subtitle">Mockups Interactifs</p>
+        </div>
+
+        <div class="designs-list">
+            <a href="design1.html" class="design-link" target="_blank">
+                <span class="design-name">Design 1</span>
+                <span class="design-arrow">→</span>
+            </a>
+
+            <a href="design2.html" class="design-link" target="_blank">
+                <span class="design-name">Design 2</span>
+                <span class="design-arrow">→</span>
+            </a>
+
+            <a href="design3.html" class="design-link" target="_blank">
+                <span class="design-name">Design 3</span>
+                <span class="design-arrow">→</span>
+            </a>
+
+        </div>
+    </div>
+</body>
+</html>
