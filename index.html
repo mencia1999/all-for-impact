@@ -18,6 +18,42 @@
             line-height: 1.6;
         }
 
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 15px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #173A1B;
+            cursor: pointer;
+            padding: 5px 12px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: #FF882F;
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #FBF5EC;
+        }
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -77,6 +113,7 @@
             text-align: center;
             color: #FFFFFF;
             margin-bottom: 26px;
+            letter-spacing: 0.5px;
         }
 
         .hero-subtitle {
@@ -108,6 +145,7 @@
             color: #FFFFFF;
             text-decoration: none;
             transition: all 0.3s;
+            letter-spacing: 0.3px;
         }
 
         .cta-btn:hover {
@@ -136,6 +174,7 @@
             text-align: center;
             color: #173A1B;
             margin-bottom: 72px;
+            letter-spacing: 0.8px;
         }
 
         .section-title .orange {
@@ -226,7 +265,7 @@
         }
 
         .pillar-card {
-            width: 262px;
+            width: 279px;
             min-height: 342px;
             background: #FFFFFF;
             border-radius: 5px;
@@ -266,28 +305,35 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 900;
             font-size: 24px;
-            line-height: 24px;
+            line-height: 26px;
             text-align: center;
             color: #063F00;
             margin-bottom: 27px;
             padding: 0 20px;
-            min-height: 72px;
+            min-height: 54px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 0px;
+            word-wrap: break-word;
+            hyphens: none;
         }
 
         .pillar-card.primary .pillar-title {
             color: #FFFFFF;
         }
 
-        .pillar-title .subtitle {
-            font-size: 18px;
+        .pillar-title-main {
+            font-weight: 900;
+            font-size: 24px;
+        }
+
+        .pillar-title-sub {
+            font-size: 16px;
             font-weight: 400;
             font-family: 'Red Hat Display', sans-serif;
-            text-transform: none;
+            margin-top: 2px;
         }
 
         .pillar-list {
@@ -301,7 +347,9 @@
             padding: 0 34px;
             flex: 1;
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
         }
 
         .pillar-card.primary .pillar-list {
@@ -330,6 +378,7 @@
             text-align: center;
             color: #FFFFFF;
             margin-bottom: 22px;
+            letter-spacing: 1.5px;
         }
 
         .cta-footer h2 .orange {
@@ -389,6 +438,7 @@
             color: #FFFFFF;
             cursor: pointer;
             transition: all 0.3s;
+            letter-spacing: 0.3px;
         }
 
         .email-submit:hover {
@@ -405,6 +455,26 @@
             margin-bottom: 111px;
         }
 
+        /* Success Message */
+        .success-message {
+            display: none;
+            width: 650px;
+            margin: 20px auto;
+            padding: 15px;
+            background: rgba(79, 214, 137, 0.2);
+            border: 2px solid #4FD689;
+            border-radius: 5px;
+            color: #4FD689;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
         /* Social Section */
         .social-section {
             background: #052B0A;
@@ -413,23 +483,29 @@
         }
 
         .follow-btn {
-            display: flex;
-            width: 259px;
+            display: inline-block;
+            width: auto;
             height: 38px;
-            margin: 0 auto 64px;
             background: #00613B;
             border-radius: 5px;
-            align-items: center;
-            justify-content: center;
             font-family: 'Poppins', sans-serif;
             font-style: italic;
             font-weight: 900;
             font-size: 18px;
-            line-height: 28px;
+            line-height: 38px;
             text-align: center;
             color: #FFFFFF;
             text-decoration: none;
             transition: all 0.3s;
+            letter-spacing: 0.3px;
+            padding: 0 25px;
+            white-space: nowrap;
+        }
+        
+        .social-section > a.follow-btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 64px;
         }
 
         .follow-btn:hover {
@@ -441,7 +517,7 @@
             justify-content: flex-end;
             gap: 15px;
             max-width: 1280px;
-            margin: 0 auto;
+            margin: 15px auto;
             padding: 0 58px 0 0;
         }
 
@@ -553,7 +629,8 @@
                 width: 90%;
             }
 
-            .email-form {
+            .email-form,
+            .success-message {
                 width: 90%;
                 flex-direction: column;
                 height: auto;
@@ -581,26 +658,36 @@
                 gap: 10px;
             }
         }
+
+        @media (min-width: 1281px) {
+            .pillars-grid {
+                grid-template-columns: repeat(4, 262px);
+                gap: 31px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="logo">
             <img src="images/logo.png" alt="All For Impact Logo">
         </div>
-        <h1>ALL FOR IMPACT,<br>ALL TO INVEST FOR IMPACT</h1>
-        <p class="hero-subtitle">All for Impact is the digital one-stop-shop connecting investors, funds and experts to unlock impact investments across Africa</p>
-        <a href="#join" class="cta-btn">GET EARLY ACCESS</a>
+        <h1 data-i18n-html="hero.title"></h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
+        <a href="#join" class="cta-btn" data-i18n="hero.cta"></a>
     </section>
 
     <!-- Impact Section -->
     <section class="impact-section">
         <div class="container">
-            <h2 class="section-title">
-                MAKING <span class="orange">REAL IMPACT</span><br>
-                ACROSS AFRICA
-            </h2>
+            <h2 class="section-title" data-i18n-html="impact.title"></h2>
 
             <div class="impact-layout">
                 <div>
@@ -610,25 +697,24 @@
                 </div>
 
                 <div class="impact-text-content">
-                    <p>Africa's impact investment landscape is evolving rapidly. All for Impact bridges the gap between capital and opportunities, enabling sustainable develoment at scale.</p>
+                    <p data-i18n="impact.description"></p>
 
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <span class="stat-number">$1.3</span>
-                            <span class="stat-label">trillions annual funding gap in Africa for achieving the SDGs</span>
+                            <span class="stat-number" data-i18n="impact.stat1.number"></span>
+                            <span class="stat-label" data-i18n="impact.stat1.label"></span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">95</span>
-                            <span class="stat-label">billion $ remittances in Africa in 2026</span>
+                            <span class="stat-number" data-i18n="impact.stat2.number"></span>
+                            <span class="stat-label" data-i18n="impact.stat2.label"></span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">255</span>
-                            <span class="stat-label">impact funds operating in the continent</span>
+                            <span class="stat-number" data-i18n="impact.stat3.number"></span>
+                            <span class="stat-label" data-i18n="impact.stat3.label"></span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">54</span>
-                            <span class="stat-label">African countries to connect</span>
-                           
+                            <span class="stat-number" data-i18n="impact.stat4.number"></span>
+                            <span class="stat-label" data-i18n="impact.stat4.label"></span>
                         </div>
                     </div>
                 </div>
@@ -640,11 +726,8 @@
     <section class="pillars-section">
         <div class="container">
             <div class="pillars-intro">
-                <h2 class="section-title">
-                    INVEST IN AFRICA.<br>
-                    <span class="orange">FOR IMPACT.</span> TOGETHER.
-                </h2>
-                <p>Democratizing impact investing to create sustainable change across the African continent.</p>
+                <h2 class="section-title" data-i18n-html="pillars.title"></h2>
+                <p data-i18n="pillars.subtitle"></p>
             </div>
 
             <div class="pillars-grid">
@@ -655,9 +738,9 @@
                             <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                         </svg>
                     </div>
-                    <h3 class="pillar-title">FOR WHOM ?</h3>
+                    <h3 class="pillar-title" data-i18n-html="pillars.forWhom.title"></h3>
                     <ul class="pillar-list">
-                        <li>Engaged Citizens investment communities and diaspora Family offices Foundations Corporates Impact Funds</li>
+                        <li data-i18n="pillars.forWhom.content"></li>
                     </ul>
                 </div>
 
@@ -668,9 +751,9 @@
                             <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
                         </svg>
                     </div>
-                    <h3 class="pillar-title">1. INFORMATION<br>EDUCATION</h3>
+                    <h3 class="pillar-title" data-i18n-html="pillars.information.title"></h3>
                     <ul class="pillar-list">
-                        <li>Impact investing training <br>African success Stories <br> Thematic communities Webinars and events</li>
+                        <li data-i18n-html="pillars.information.content"></li>
                     </ul>
                 </div>
 
@@ -681,9 +764,9 @@
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                         </svg>
                     </div>
-                    <h3 class="pillar-title">2. IMPACT</h3>
+                    <h3 class="pillar-title" data-i18n-html="pillars.impact.title"></h3>
                     <ul class="pillar-list">
-                        <li>Smart matching algorythm SDG alignment Risk assessment <br> Due diligence support</li>
+                        <li data-i18n-html="pillars.impact.content"></li>
                     </ul>
                 </div>
 
@@ -694,12 +777,9 @@
                             <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
                         </svg>
                     </div>
-                    <h3 class="pillar-title">
-                        <span>3. INVESTMENT</span>
-                        <span class="subtitle">via matchmaking plateform</span>
-                    </h3>
-                    <ul class="pillar-list">
-                        <li>250+ verified SME funds <br> Direct introductions <br> Community investing Impact reporting</li>
+                    <h3 class="pillar-title" data-i18n-html="pillars.investment.title"></h3>
+                    <ul class="pillar-list mt-m15">
+                        <li data-i18n-html="pillars.investment.content"></li>
                     </ul>
                 </div>
             </div>
@@ -709,22 +789,42 @@
     <!-- CTA Footer -->
     <section class="cta-footer" id="join">
         <div class="container">
-            <h2>
-                BE PART OF THE<br>
-                <span class="orange">IMPACT REVOLUTION</span>
-            </h2>
-            <p>Join our early access list and be the first to know when All For Impact launches. <br>Together, we can transform Impact Investing in Africa.</p>
+            <h2 data-i18n-html="cta.title"></h2>
+            <p data-i18n-html="cta.subtitle"></p>
 
-            <form class="email-form" onsubmit="handleSubmit(event)">
-                <input type="email" class="email-input" placeholder="Enter your email" required>
-                <button type="submit" class="email-submit">GET EARLY ACCESS</button>
+            <!-- Mailchimp Form -->
+            <form class="email-form" 
+                  action="https://app.us6.list-manage.com/subscribe/post?u=ca86690bcd087bc874cc2f0c2&id=4f36b87874&f_id=00acd0e5f0" 
+                  method="POST" 
+                  target="_blank"
+                  onsubmit="return handleMailchimpSubmit(event)">
+                
+                <!-- Email Field -->
+                <input type="email" 
+                       name="EMAIL" 
+                       class="email-input" 
+                       data-i18n-placeholder="cta.emailPlaceholder" 
+                       required>
+                
+                <!-- Hidden Language Field -->
+                <input type="hidden" name="LANG" id="langField" value="">
+                
+                <!-- Anti-bot field (keep exactly as is) -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_ca86690bcd087bc874cc2f0c2_4f36b87874" tabindex="-1" value="">
+                </div>
+                
+                <button type="submit" class="email-submit" data-i18n="cta.button"></button>
             </form>
 
-            <p class="no-spam">No spam, ever. Unsubscribe anytime.</p>
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage"></div>
+
+            <p class="no-spam" data-i18n="cta.noSpam"></p>
         </div>
 
         <div class="social-section">
-            <a href="#" class="follow-btn">FOLLOW US ON LINKEDIN</a>
+            <a href="#" class="follow-btn" data-i18n="social.followLinkedIn"></a>
             
             <div class="social-icons">
                 <a href="#" class="social-icon" aria-label="LinkedIn">
@@ -750,24 +850,251 @@
             </div>
 
             <div class="footer-content">
-                <div>©2025 All For Impact. All rights reserved</div>
+                <div data-i18n="footer.copyright"></div>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of service</a>
-                    <a href="#">Contact</a>
+                    <a href="#" data-i18n="footer.privacy"></a>
+                    <a href="#" data-i18n="footer.terms"></a>
+                    <a href="#" data-i18n="footer.contact"></a>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('.email-input').value;
-            alert(`Thank you! We'll contact you at ${email} when we launch.`);
-            event.target.reset();
+        // Translations
+        const translations = {
+            en: {
+                hero: {
+                    title: "ALL FOR IMPACT,<br> ALL TO INVEST FOR IMPACT",
+                    subtitle: "All for Impact is the digital one-stop-shop connecting investors, funds and experts to unlock impact investments across Africa",
+                    cta: "GET EARLY ACCESS"
+                },
+                impact: {
+                    title: "MAKING <span class='orange'>REAL IMPACT</span><br>ACROSS AFRICA",
+                    description: "Africa's impact investment landscape is evolving rapidly. All for Impact bridges the gap between capital and opportunities, enabling sustainable development at scale.",
+                    stat1: {
+                        number: "$1.3",
+                        label: "trillions annual funding gap in Africa for achieving the SDGs"
+                    },
+                    stat2: {
+                        number: "95",
+                        label: "billion $ remittances in Africa in 2026"
+                    },
+                    stat3: {
+                        number: "255",
+                        label: "impact funds operating in the continent"
+                    },
+                    stat4: {
+                        number: "54",
+                        label: "African countries to connect"
+                    }
+                },
+                pillars: {
+                    title: "INVEST IN AFRICA.<br><span class='orange'>FOR IMPACT.</span> TOGETHER.",
+                    subtitle: "Democratizing impact investing to create sustainable change across the African continent.",
+                    forWhom: {
+                        title: "FOR WHOM?<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+                        content: "Engaged Citizens, Investment Communities and Diaspora, Family Offices, Foundations, Corporates, Impact Funds"
+                    },
+                    information: {
+                        title: "1. INFORMATION<br><span style='display: block; margin-top: 2px;'>EDUCATION</span>",
+                        content: "Impact Investing Training<br>African Success Stories<br>Thematic Communities<br>Webinars and Events"
+                    },
+                    impact: {
+                        title: "2. IMPACT<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+                        content: "Smart Matching Algorithm<br>SDG Alignment<br>Risk Assessment<br>Due Diligence Support"
+                    },
+                    investment: {
+                        title: "3. INVESTMENT<br><span style='font-size: 16px; font-weight: 400; font-family: Red Hat Display, sans-serif; display: block; margin-top: 2px;'>via matchmaking platform</span>",
+                        content: "250+ Verified SME Funds<br>Direct Introductions<br>Community Investing<br>Impact Reporting"
+                    }
+                },
+                cta: {
+                    title: "BE PART OF THE<br><span class='orange'>IMPACT REVOLUTION</span>",
+                    subtitle: "Join our early access list and be the first to know when All For Impact launches.<br>Together, we can transform Impact Investing in Africa.",
+                    emailPlaceholder: "Enter your email",
+                    button: "GET EARLY ACCESS",
+                    noSpam: "No spam, ever. Unsubscribe anytime.",
+                    successMessage: "Thank you! Check your email to confirm your subscription."
+                },
+                social: {
+                    followLinkedIn: "FOLLOW US ON LINKEDIN"
+                },
+                footer: {
+                    copyright: "©2025 All For Impact. All rights reserved",
+                    privacy: "Privacy Policy",
+                    terms: "Terms of Service",
+                    contact: "Contact"
+                }
+            },
+            fr: {
+                hero: {
+                    title: "TOUT POUR L'IMPACT,<br>  TOUS POUR INVESTIR AVEC IMPACT",
+                    subtitle: "All for Impact est une plateforme digitale « one-stop-shop » qui connecte investisseurs, fonds et experts afin de libérer le potentiel de l'investissement à impact à travers l'Afrique.",
+                    cta: "ACCÈS ANTICIPÉ"
+                },
+                impact: {
+                    title: "UN IMPACT <span class='orange'>CONCRET</span><br>À L'ÉCHELLE DU CONTINENT AFRICAIN",
+                    description: "L'écosystème de l'investissement à impact en Afrique évolue rapidement. All for Impact crée le lien entre ceux qui souhaitent investir pour des causes qui leur tiennent à cœur et les opportunités d'investissement à impact, pour permettre un développement durable et responsable sur le continent.",
+                    stat1: {
+                        number: "1 300",
+                        label: "milliards USD de déficit annuel de financement pour atteindre les ODD en Afrique"
+                    },
+                    stat2: {
+                        number: "90",
+                        label: "milliards de flux de la diaspora vers le continent"
+                    },
+                    stat3: {
+                        number: "255",
+                        label: "fonds à impact actifs sur le continent"
+                    },
+                    stat4: {
+                        number: "54",
+                        label: "pays africains à connecter"
+                    }
+                },
+                pillars: {
+                    title: "INVESTIR EN AFRIQUE.<br><span class='orange'>POUR L'IMPACT.</span> ENSEMBLE.",
+                    subtitle: "Démocratiser l'investissement à impact pour générer un changement durable à travers le continent africain.",
+                    forWhom: {
+                        title: "POUR QUI ?<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+                        content: "Citoyens engagés, Communautés d'investisseurs et diasporas, Family offices & fondations, Entreprises & fonds à impact"
+                    },
+                    information: {
+                        title: "1. INFORMATION<br><span style='display: block; margin-top: 2px;'>& FORMATION</span>",
+                        content: "Formations à l'investissement à impact<br>Success stories africaines<br>Communautés thématiques<br>Webinaires et événements"
+                    },
+                    impact: {
+                        title: "2. IMPACT<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+                        content: "Mise en relation intelligente<br>Alignement avec les ODD<br>Analyse des risques<br>Appui à la due diligence"
+                    },
+                    investment: {
+                        title: "3. INVESTISSEMENT<br><span style='font-size: 16px; font-weight: 400; font-family: Red Hat Display, sans-serif; display: block; margin-top: 2px;'>via plateforme de mise en relation</span>",
+                        content: "Plus de 250 fonds PME vérifiés<br>Mises en relation directes<br>Investissement communautaire<br>Reporting d'impact"
+                    }
+                },
+                cta: {
+                    title: "REJOIGNEZ LE<br><span class='orange'>MOUVEMENT DE L'IMPACT</span>",
+                    subtitle: "Inscrivez-vous à la liste d'accès anticipé et soyez informé·e en priorité du lancement d'All for Impact.<br>Ensemble, développons l'investissement à impact en Afrique.",
+                    emailPlaceholder: "Entrez votre adresse email",
+                    button: "ACCÈS ANTICIPÉ",
+                    noSpam: "Aucun spam. Désinscription possible à tout moment.",
+                    successMessage: "Merci ! Vérifiez votre boîte mail pour confirmer votre inscription."
+                },
+                social: {
+                    followLinkedIn: "SUIVEZ-NOUS SUR LINKEDIN"
+                },
+                footer: {
+                    copyright: "©2025 All For Impact. Tous droits réservés",
+                    privacy: "Politique de confidentialité",
+                    terms: "Conditions d'utilisation",
+                    contact: "Contact"
+                }
+            }
+        };
+
+        // Get browser language
+        function getBrowserLanguage() {
+            const lang = navigator.language || navigator.userLanguage;
+            return lang.startsWith('fr') ? 'fr' : 'en';
         }
 
+        // Get stored language or browser language
+        function getInitialLanguage() {
+            return localStorage.getItem('preferredLanguage') || getBrowserLanguage();
+        }
+
+        // Apply translations
+        function applyTranslations(lang) {
+            const t = translations[lang];
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const value = key.split('.').reduce((obj, k) => obj?.[k], t);
+                
+                if (value) {
+                    if (element.tagName === 'INPUT') {
+                        element.placeholder = value;
+                    } else {
+                        element.textContent = value;
+                    }
+                }
+            });
+
+            // Update elements with HTML content (for <br> and <span>)
+            document.querySelectorAll('[data-i18n-html]').forEach(element => {
+                const key = element.getAttribute('data-i18n-html');
+                const value = key.split('.').reduce((obj, k) => obj?.[k], t);
+                
+                if (value) {
+                    element.innerHTML = value;
+                }
+            });
+
+            // Update placeholder separately
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                const value = key.split('.').reduce((obj, k) => obj?.[k], t);
+                
+                if (value) {
+                    element.placeholder = value;
+                }
+            });
+
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Store preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialLang = getInitialLanguage();
+            applyTranslations(initialLang);
+
+            // Language switcher event listeners
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    applyTranslations(lang);
+                });
+            });
+        });
+
+        // Mailchimp form submission handler
+        function handleMailchimpSubmit(event) {
+            // Update language field before submission
+            const lang = localStorage.getItem('preferredLanguage') || 'en';
+            document.getElementById('langField').value = lang;
+            
+            // Get success message
+            const t = translations[lang];
+            const successMsg = t.cta.successMessage;
+            
+            // Show success message after a short delay
+            setTimeout(() => {
+                const successElement = document.getElementById('successMessage');
+                successElement.textContent = successMsg;
+                successElement.classList.add('show');
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successElement.classList.remove('show');
+                }, 5000);
+            }, 500);
+            
+            // Let the form submit normally to Mailchimp
+            return true;
+        }
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
