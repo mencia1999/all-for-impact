@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All For Impact - Impact Investment Platform for Africa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -62,7 +64,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            background: linear-gradient(rgba(0, 0, 0, -7), rgba(0, 0, 0, 0.2)),
                         url('images/hero.jpg') center/cover;
             overflow: hidden;
         }
@@ -121,9 +123,9 @@
             width: 538px;
             font-family: 'Red Hat Display', sans-serif;
             font-style: normal;
-            font-weight: 500;
+            font-weight: 400;
             font-size: 18px;
-            line-height: 22px;
+            line-height: 28px;
             text-align: center;
             color: #FFFFFF;
             margin-bottom: 43px;
@@ -201,9 +203,9 @@
 
         .impact-text-content > p {
             font-family: 'Red Hat Display', sans-serif;
-            font-weight: 700;
+            font-weight: 400;
             font-size: 18px;
-            line-height: 22px;
+            line-height: 28px;
             color: #173A1B;
             margin-bottom: 33px;
         }
@@ -229,9 +231,9 @@
 
         .stat-label {
             font-family: 'Red Hat Display', sans-serif;
-            font-weight: 700;
+            font-weight: 400;
             font-size: 18px;
-            line-height: 22px;
+            line-height: 28px;
             color: #173A1B;
         }
 
@@ -250,9 +252,9 @@
             width: 904px;
             margin: 22px auto 0;
             font-family: 'Red Hat Display', sans-serif;
-            font-weight: 700;
+            font-weight: 400;
             font-size: 18px;
-            line-height: 22px;
+            line-height: 28px;
             text-align: center;
             color: #173A1B;
         }
@@ -283,22 +285,19 @@
 
         .pillar-icon {
             position: absolute;
-            width: 93px;
-            height: 93px;
+            width: 100px;
+            height: 100px;
             left: 50%;
             transform: translateX(-50%);
             top: -47px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(79, 214, 137, 0.3);
-            border-radius: 50%;
-            border: 4px solid #FBF5EC;
         }
 
-        .pillar-icon svg {
-            width: 50px;
-            height: 50px;
+        .pillar-icon img {
+            width: 100%;
+            height: 100%;
         }
 
         .pillar-title {
@@ -389,9 +388,9 @@
             width: 626px;
             margin: 0 auto 40px;
             font-family: 'Red Hat Display', sans-serif;
-            font-weight: 700;
+            font-weight: 400;
             font-size: 18px;
-            line-height: 22px;
+            line-height: 28px;
             text-align: center;
             color: #FFFFFF;
         }
@@ -514,11 +513,11 @@
 
         .social-icons {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             gap: 15px;
             max-width: 1280px;
             margin: 15px auto;
-            padding: 0 58px 0 0;
+            padding: 0;
         }
 
         .social-icon {
@@ -612,6 +611,12 @@
             .impact-image {
                 width: 100%;
                 height: auto;
+            }
+
+            /* CORRECTION: Stats en une seule colonne sur mobile */
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .pillars-grid {
@@ -734,9 +739,7 @@
                 <!-- FOR WHOM -->
                 <div class="pillar-card primary">
                     <div class="pillar-icon">
-                        <svg viewBox="0 0 24 24" fill="white">
-                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                        </svg>
+                        <img src="images/SVG/people.svg" alt="People Icon">
                     </div>
                     <h3 class="pillar-title" data-i18n-html="pillars.forWhom.title"></h3>
                     <ul class="pillar-list">
@@ -747,9 +750,7 @@
                 <!-- INFORMATION EDUCATION -->
                 <div class="pillar-card">
                     <div class="pillar-icon">
-                        <svg viewBox="0 0 24 24" fill="#063F00">
-                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-                        </svg>
+                        <img src="images/SVG/light.svg" alt="Education Icon">
                     </div>
                     <h3 class="pillar-title" data-i18n-html="pillars.information.title"></h3>
                     <ul class="pillar-list">
@@ -760,9 +761,7 @@
                 <!-- IMPACT -->
                 <div class="pillar-card">
                     <div class="pillar-icon">
-                        <svg viewBox="0 0 24 24" fill="#063F00">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        </svg>
+                        <img src="images/SVG/impact.svg" alt="Impact Icon">
                     </div>
                     <h3 class="pillar-title" data-i18n-html="pillars.impact.title"></h3>
                     <ul class="pillar-list">
@@ -773,9 +772,7 @@
                 <!-- INVESTMENT -->
                 <div class="pillar-card">
                     <div class="pillar-icon">
-                        <svg viewBox="0 0 24 24" fill="#063F00">
-                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
-                        </svg>
+                       <img src="images/SVG/marketplace.svg" alt="Investment Icon">
                     </div>
                     <h3 class="pillar-title" data-i18n-html="pillars.investment.title"></h3>
                     <ul class="pillar-list mt-m15">
@@ -824,10 +821,10 @@
         </div>
 
         <div class="social-section">
-            <a href="https://www.linkedin.com/company/all-for-impact/ " class="follow-btn" data-i18n="social.followLinkedIn" target="_blank"></a>
+            <a href="https://www.linkedin.com/company/all-for-impact/" class="follow-btn" data-i18n="social.followLinkedIn" target="_blank"></a>
             
             <div class="social-icons">
-                <a href="https://www.linkedin.com/company/all-for-impact/ " class="social-icon" aria-label="LinkedIn" target="_blank">
+                <a href="https://www.linkedin.com/company/all-for-impact/" class="social-icon" aria-label="LinkedIn" target="_blank">
                     <svg viewBox="0 0 24 24">
                         <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                     </svg>
