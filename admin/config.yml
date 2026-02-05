@@ -5,44 +5,57 @@
 # Backend (stockage des fichiers)
 backend:
   name: git-gateway
-  branch: main  # ou master selon votre repo
-
-
+  branch: main
 
 # Dossiers médias
-media_folder: "images/uploads"  # Où sont stockées les nouvelles images
-public_folder: "/images/uploads"
+media_folder: "images"
+public_folder: "/images"
 
 # Langue de l'interface
 locale: 'fr'
-
-# Logo personnalisé (optionnel)
-logo_url: /images/logo.png
 
 # ============================================
 # COLLECTIONS (sections modifiables)
 # ============================================
 
 collections:
+  # ========== IMAGES ==========
+  - name: "images"
+    label: "🖼️ Images"
+    files:
+      - name: "site_images"
+        label: "Images du site"
+        file: "content/images.json"
+        fields:
+          - {label: "Logo", name: "logo", widget: "image", hint: "Logo principal du site"}
+          - {label: "Image Hero (fond)", name: "hero", widget: "image", hint: "Image de fond de la bannière"}
+          - {label: "Image Impact (enfants)", name: "kids", widget: "image", hint: "Photo des étudiants africains"}
+          
+          - label: "Icônes des piliers"
+            name: "pillars_icons"
+            widget: "object"
+            fields:
+              - {label: "Icône People", name: "people", widget: "image"}
+              - {label: "Icône Education", name: "light", widget: "image"}
+              - {label: "Icône Impact", name: "impact", widget: "image"}
+              - {label: "Icône Investment", name: "marketplace", widget: "image"}
+
   # ========== CONTENU FRANÇAIS ==========
   - name: "contenu_fr"
     label: "🇫🇷 Contenu Français"
     files:
-      
-      # --- HERO SECTION ---
-      - name: "hero_fr"
-        label: "Hero (Bannière)"
+      - name: "fr_content"
+        label: "Toutes les sections"
         file: "content/fr.json"
         fields:
-          - label: "Section Hero" 
+          - label: "Section Hero"
             name: "hero"
             widget: "object"
             fields:
-              - {label: "Titre principal", name: "title", widget: "text", hint: "Le grand titre en haut de la page"}
+              - {label: "Titre principal", name: "title", widget: "text"}
               - {label: "Sous-titre", name: "subtitle", widget: "text"}
               - {label: "Texte du bouton", name: "cta", widget: "string"}
           
-          # --- SECTION IMPACT ---
           - label: "Section Impact"
             name: "impact"
             widget: "object"
@@ -50,7 +63,6 @@ collections:
               - {label: "Titre de la section", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
               
-              # Statistique 1
               - label: "Statistique 1"
                 name: "stat1"
                 widget: "object"
@@ -58,7 +70,6 @@ collections:
                   - {label: "Chiffre", name: "number", widget: "string"}
                   - {label: "Label", name: "label", widget: "text"}
               
-              # Statistique 2
               - label: "Statistique 2"
                 name: "stat2"
                 widget: "object"
@@ -66,7 +77,6 @@ collections:
                   - {label: "Chiffre", name: "number", widget: "string"}
                   - {label: "Label", name: "label", widget: "text"}
               
-              # Statistique 3
               - label: "Statistique 3"
                 name: "stat3"
                 widget: "object"
@@ -74,7 +84,6 @@ collections:
                   - {label: "Chiffre", name: "number", widget: "string"}
                   - {label: "Label", name: "label", widget: "text"}
               
-              # Statistique 4
               - label: "Statistique 4"
                 name: "stat4"
                 widget: "object"
@@ -82,7 +91,6 @@ collections:
                   - {label: "Chiffre", name: "number", widget: "string"}
                   - {label: "Label", name: "label", widget: "text"}
           
-          # --- SECTION PILLARS ---
           - label: "Section Piliers"
             name: "pillars"
             widget: "object"
@@ -90,7 +98,6 @@ collections:
               - {label: "Titre", name: "title", widget: "string"}
               - {label: "Sous-titre", name: "subtitle", widget: "text"}
               
-              # Pilier 1 - For Whom
               - label: "Pour Qui ?"
                 name: "forWhom"
                 widget: "object"
@@ -98,7 +105,6 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Contenu", name: "content", widget: "text"}
               
-              # Pilier 2 - Information
               - label: "Information & Formation"
                 name: "information"
                 widget: "object"
@@ -106,7 +112,6 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Contenu", name: "content", widget: "text"}
               
-              # Pilier 3 - Impact
               - label: "Impact"
                 name: "impact"
                 widget: "object"
@@ -114,7 +119,6 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Contenu", name: "content", widget: "text"}
               
-              # Pilier 4 - Investment
               - label: "Investissement"
                 name: "investment"
                 widget: "object"
@@ -122,7 +126,6 @@ collections:
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Contenu", name: "content", widget: "text"}
           
-          # --- SECTION CTA FOOTER ---
           - label: "Call to Action"
             name: "cta"
             widget: "object"
@@ -134,14 +137,12 @@ collections:
               - {label: "Texte anti-spam", name: "noSpam", widget: "string"}
               - {label: "Message de succès", name: "successMessage", widget: "string"}
           
-          # --- SECTION SOCIAL ---
           - label: "Réseaux Sociaux"
             name: "social"
             widget: "object"
             fields:
               - {label: "Texte bouton LinkedIn", name: "followLinkedIn", widget: "string"}
           
-          # --- FOOTER ---
           - label: "Pied de page"
             name: "footer"
             widget: "object"
@@ -155,10 +156,8 @@ collections:
   - name: "contenu_en"
     label: "🇬🇧 English Content"
     files:
-      
-      # Même structure que FR
-      - name: "hero_en"
-        label: "Hero (Banner)"
+      - name: "en_content"
+        label: "All sections"
         file: "content/en.json"
         fields:
           - label: "Hero Section"
@@ -237,7 +236,7 @@ collections:
                 widget: "object"
                 fields:
                   - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Content", name: "content", widget: "text"}
+                  - {label: "Content", name: "content", widget: "string"}
           
           - label: "Call to Action"
             name: "cta"
@@ -276,7 +275,6 @@ collections:
           - {label: "Nom du site", name: "siteName", widget: "string"}
           - {label: "URL du site", name: "siteUrl", widget: "string"}
           - {label: "Description SEO", name: "seoDescription", widget: "text"}
-          - {label: "Email Mailchimp", name: "mailchimpEmail", widget: "string"}
           
           - label: "Réseaux Sociaux"
             name: "socialLinks"

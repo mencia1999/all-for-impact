@@ -94,6 +94,9 @@
         // Variable pour stocker la config générale
         let siteConfig = {};
 
+        // Variable pour stocker les images
+        let siteImages = {};  
+
         // ============================================
         // CHARGEMENT DU CONTENU DEPUIS LES FICHIERS JSON
         // ============================================
@@ -119,6 +122,13 @@
                 if (!configResponse.ok) throw new Error('Erreur chargement config');
                 siteConfig = await configResponse.json();
                 console.log('✅ Configuration chargée');
+                // Charger les images
+                const imagesResponse = await fetch('/content/images.json');
+                siteImages = await imagesResponse.json();
+                console.log('✅ Images chargées');
+
+                // Mettre à jour les images dynamiquement
+                updateImages(siteImages);
                 
                 // Mettre à jour les liens sociaux dynamiquement
                 updateSocialLinks(siteConfig.socialLinks);
@@ -279,7 +289,34 @@
             const initialLang = getInitialLanguage();
             applyTranslations(initialLang);
         }
-
+        function updateImages(images) {
+    if (!images) return;
+    
+    // Logo
+    const logoImg = document.querySelector('.logo img');
+    if (logoImg && images.logo) logoImg.src = images.logo;
+    
+    // Image hero (fond - si vous voulez le rendre dynamique)
+    const heroSection = document.querySelector('.hero');
+    if (heroSection && images.hero) {
+        heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url('${images.hero}')`;
+    }
+    
+    // Image des enfants
+    const kidsImg = document.querySelector('.impact-image');
+    if (kidsImg && images.kids) kidsImg.src = images.kids;
+    
+    // Icônes des piliers
+    if (images.pillars_icons) {
+        const pillarsIcons = document.querySelectorAll('.pillar-icon img');
+        if (pillarsIcons.length >= 4) {
+            pillarsIcons[0].src = images.pillars_icons.people;
+            pillarsIcons[1].src = images.pillars_icons.light;
+            pillarsIcons[2].src = images.pillars_icons.impact;
+            pillarsIcons[3].src = images.pillars_icons.marketplace;
+        }
+    }
+}
         // ============================================
         // MISE À JOUR DES LIENS SOCIAUX
         // ============================================
