@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "title": "ALL FOR IMPACT,<br> ALL TO INVEST FOR IMPACT",
+    "subtitle": "All for Impact is the digital one-stop-shop connecting investors, funds and experts to unlock impact investments across Africa",
+    "cta": "STAY TUNED"
+  },
+  "impact": {
+    "title": "MAKING <span class='orange'>REAL IMPACT</span><br>ACROSS AFRICA",
+    "description": "Africa's impact investment landscape is evolving rapidly. <br> All for Impact bridges the gap between capital and opportunities, enabling sustainable development at scale.",
+    "stat1": {
+      "number": "$1.3",
+      "label": "trillion annual funding gap in Africa for achieving the SDGs"
+    },
+    "stat2": {
+      "number": "$95",
+      "label": "billion remittances in Africa in 2025"
+    },
+    "stat3": {
+      "number": "255",
+      "label": "impact funds operating on the continent"
+    },
+    "stat4": {
+      "number": "54",
+      "label": "African countries to connect"
+    }
+  },
+  "pillars": {
+    "title": "INVEST IN AFRICA.<br><span class='orange'>FOR IMPACT.</span> TOGETHER.",
+    "subtitle": "Democratizing impact investing to create sustainable change across the African continent.",
+    "forWhom": {
+      "title": "FOR WHOM?<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+      "content": "Engaged Citizens, Investment Communities and Diaspora, Family Offices, Foundations, Corporates, Impact Funds"
+    },
+    "information": {
+      "title": "1. INFORMATION<br><span style='display: block; margin-top: 2px;'>EDUCATION</span>",
+      "content": "Impact Investing Training<br>African Success Stories<br>Thematic Communities<br>Webinars and Events"
+    },
+    "impact": {
+      "title": "2. IMPACT <br> TOOLS <br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+      "content": "SDG Aligned impact scorecard <br>Risk Assessment<br>Due Diligence Support<br>Impact Reporting"
+    },
+    "investment": {
+      "title": "3. INVESTMENT<br><span style='font-size: 16px; font-weight: 400; font-family: Red Hat Display, sans-serif; display: block; margin-top: 2px;'>via a matchmaking platform</span>",
+      "content": "Smart Matching Algorithm<br>250+ Verified SME Funds<br>Direct Introductions<br>Community Investing"
+    }
+  },
+  "cta": {
+    "title": "BE PART OF THE<br><span class='orange'>IMPACT REVOLUTION</span>",
+    "subtitle": "Join our early access list and be the first to know when All For Impact launches.<br>Together, we can transform Impact Investing in Africa.",
+    "emailPlaceholder": "Enter your email",
+    "button": "STAY TUNED",
+    "noSpam": "No spam, ever. Unsubscribe anytime.",
+    "successMessage": "Thank you! Check your email to confirm your subscription."
+  },
+  "social": {
+    "followLinkedIn": "FOLLOW US ON LINKEDIN"
+  },
+  "footer": {
+    "copyright": "©2025 All For Impact. All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact"
+  }
+}

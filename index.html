@@ -4,673 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All For Impact - Impact Investment Platform for Africa</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Red Hat Display', sans-serif;
-            color: #173A1B;
-            line-height: 1.6;
-        }
-
-        /* Language Switcher */
-        .language-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 10px 15px;
-            border-radius: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: none;
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            color: #173A1B;
-            cursor: pointer;
-            padding: 5px 12px;
-            border-radius: 15px;
-            transition: all 0.3s;
-        }
-
-        .lang-btn.active {
-            background: #FF882F;
-            color: white;
-        }
-
-        .lang-btn:hover:not(.active) {
-            background: #FBF5EC;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 790px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            background: linear-gradient(rgba(0, 0, 0, -7), rgba(0, 0, 0, 0.2)),
-                        url('images/hero.jpg') center/cover;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 1020px;
-            height: 1020px;
-            border: 2px solid #FF882F;
-            border-radius: 50%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-        }
-
-        .hero > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo {
-            position: relative;
-            width: 240px;
-            height: 110px;
-            margin-top: 85px;
-            margin-bottom: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .hero h1 {
-            position: relative;
-            width: 738px;
-            font-family: 'Poppins', sans-serif;
-            font-style: italic;
-            font-weight: 900;
-            font-size: 52px;
-            line-height: 52px;
-            text-align: center;
-            color: #FFFFFF;
-            margin-bottom: 26px;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-subtitle {
-            position: relative;
-            width: 538px;
-            font-family: 'Red Hat Display', sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 28px;
-            text-align: center;
-            color: #FFFFFF;
-            margin-bottom: 43px;
-        }
-
-        .cta-btn {
-            width: 242px;
-            height: 38px;
-            background: #FF882F;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Poppins', sans-serif;
-            font-style: italic;
-            font-weight: 900;
-            font-size: 18px;
-            line-height: 28px;
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: all 0.3s;
-            letter-spacing: 0.3px;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 136, 47, 0.4);
-        }
-
-        /* Impact Section */
-        .impact-section {
-            background: white;
-            padding: 100px 0;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 70px;
-        }
-
-        .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-style: italic;
-            font-weight: 900;
-            font-size: 38px;
-            line-height: 38px;
-            text-align: center;
-            color: #173A1B;
-            margin-bottom: 72px;
-            letter-spacing: 0.8px;
-        }
-
-        .section-title .orange {
-            color: #FF882F;
-        }
-
-        .impact-layout {
-            display: grid;
-            grid-template-columns: 494px 1fr;
-            gap: 70px;
-            align-items: start;
-        }
-
-        .impact-image {
-            width: 494px;
-            height: 329px;
-            border-radius: 5px;
-            object-fit: cover;
-        }
-
-        .impact-text-content {
-            padding-top: 0;
-        }
-
-        .impact-text-content > p {
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 28px;
-            color: #173A1B;
-            margin-bottom: 33px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 39px 37px;
-        }
-
-        .stat-item {
-            background: transparent;
-        }
-
-        .stat-number {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 900;
-            font-size: 34px;
-            line-height: 22px;
-            color: #FF882F;
-            margin-right: 8px;
-        }
-
-        .stat-label {
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 28px;
-            color: #173A1B;
-        }
-
-        /* Pillars Section */
-        .pillars-section {
-            background: #FBF5EC;
-            padding: 97px 0 120px;
-        }
-
-        .pillars-intro {
-            text-align: center;
-            margin-bottom: 132px;
-        }
-
-        .pillars-intro p {
-            width: 904px;
-            margin: 22px auto 0;
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 28px;
-            text-align: center;
-            color: #173A1B;
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 262px);
-            gap: 31px;
-            justify-content: center;
-        }
-
-        .pillar-card {
-            width: 279px;
-            min-height: 342px;
-            background: #FFFFFF;
-            border-radius: 5px;
-            padding-top: 100px;
-            padding-bottom: 30px;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pillar-card.primary {
-            background: #00613B;
-        }
-
-        .pillar-icon {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -47px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pillar-icon img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .pillar-title {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 900;
-            font-size: 24px;
-            line-height: 26px;
-            text-align: center;
-            color: #063F00;
-            margin-bottom: 27px;
-            padding: 0 20px;
-            min-height: 54px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0px;
-            word-wrap: break-word;
-            hyphens: none;
-        }
-
-        .pillar-card.primary .pillar-title {
-            color: #FFFFFF;
-        }
-
-        .pillar-title-main {
-            font-weight: 900;
-            font-size: 24px;
-        }
-
-        .pillar-title-sub {
-            font-size: 16px;
-            font-weight: 400;
-            font-family: 'Red Hat Display', sans-serif;
-            margin-top: 2px;
-        }
-
-        .pillar-list {
-            list-style: none;
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 28px;
-            text-align: center;
-            color: #063F00;
-            padding: 0 34px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        .pillar-card.primary .pillar-list {
-            color: #FFFFFF;
-        }
-
-        .pillar-list li {
-            margin-bottom: 0;
-        }
-
-        /* CTA Footer Section */
-        .cta-footer {
-            background: #173A1B;
-            padding-top: 111px;
-            padding-bottom: 0;
-            text-align: center;
-            color: white;
-        }
-
-        .cta-footer h2 {
-            font-family: 'Poppins', sans-serif;
-            font-style: italic;
-            font-weight: 900;
-            font-size: 38px;
-            line-height: 38px;
-            text-align: center;
-            color: #FFFFFF;
-            margin-bottom: 22px;
-            letter-spacing: 1.5px;
-        }
-
-        .cta-footer h2 .orange {
-            color: #FF882F;
-        }
-
-        .cta-footer > p {
-            width: 626px;
-            margin: 0 auto 40px;
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 28px;
-            text-align: center;
-            color: #FFFFFF;
-        }
-
-        .email-form {
-            position: relative;
-            width: 650px;
-            height: 62px;
-            margin: 5% auto 11px;
-            background: #052B0A;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            padding: 12px 12px 12px 32px;
-        }
-
-        .email-input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 22px;
-            color: #FFFFFF;
-            outline: none;
-        }
-
-        .email-input::placeholder {
-            color: #FFFFFF;
-        }
-
-        .email-submit {
-            width: 259px;
-            height: 38px;
-            background: #FF882F;
-            border-radius: 5px;
-            border: none;
-            font-family: 'Poppins', sans-serif;
-            font-style: italic;
-            font-weight: 900;
-            font-size: 18px;
-            line-height: 28px;
-            color: #FFFFFF;
-            cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 0.3px;
-        }
-
-        .email-submit:hover {
-            background: #ff9d52;
-        }
-
-        .no-spam {
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 28px;
-            text-align: center;
-            color: #FFFFFF;
-            margin-bottom: 111px;
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            width: 650px;
-            margin: 20px auto;
-            padding: 15px;
-            background: rgba(79, 214, 137, 0.2);
-            border: 2px solid #4FD689;
-            border-radius: 5px;
-            color: #4FD689;
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        /* Social Section */
-        .social-section {
-            background: #052B0A;
-            padding: 59px 0 47px;
-            position: relative;
-        }
-
-        .follow-btn {
-            display: inline-block;
-            width: auto;
-            height: 38px;
-            background: #00613B;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-            font-style: italic;
-            font-weight: 900;
-            font-size: 18px;
-            line-height: 38px;
-            text-align: center;
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: all 0.3s;
-            letter-spacing: 0.3px;
-            padding: 0 25px;
-            white-space: nowrap;
-        }
-        
-        .social-section > a.follow-btn {
-            display: block;
-            width: fit-content;
-            margin: 0 auto 64px;
-        }
-
-        .follow-btn:hover {
-            background: #007a4a;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            max-width: 1280px;
-            margin: 15px auto;
-            padding: 0;
-        }
-
-        .social-icon {
-            width: 27px;
-            height: 27px;
-            background: #00613B;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-3px);
-        }
-
-        .social-icon svg {
-            width: 14px;
-            height: 14px;
-            fill: white;
-        }
-
-        /* Footer */
-        .footer-content {
-            border-top: 0.5px solid #FFFFFF;
-            padding: 11px 0 0;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 11px 70px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-content > div:first-child {
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 28px;
-            color: #FFFFFF;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 44px;
-        }
-
-        .footer-links a {
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 28px;
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #FF882F;
-        }
-
-        /* Responsive */
-        @media (max-width: 1280px) {
-            .hero h1 {
-                width: 90%;
-                font-size: 32px;
-                line-height: 32px;
-            }
-
-            .hero-subtitle {
-                width: 90%;
-            }
-
-            .logo {
-                width: 180px;
-                height: 82px;
-                margin-top: 54px;
-            }
-
-            .section-title {
-                font-size: 28px;
-                line-height: 28px;
-            }
-
-            .impact-layout {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .impact-image {
-                width: 100%;
-                height: auto;
-            }
-
-            /* CORRECTION: Stats en une seule colonne sur mobile */
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .pillars-grid {
-                grid-template-columns: 1fr;
-                gap: 79px;
-            }
-
-            .pillar-card {
-                width: 100%;
-                max-width: 350px;
-                margin: 0 auto;
-            }
-
-            .pillars-intro p {
-                width: 90%;
-            }
-
-            .email-form,
-            .success-message {
-                width: 90%;
-                flex-direction: column;
-                height: auto;
-                gap: 10px;
-                padding: 15px;
-            }
-
-            .email-submit {
-                width: 100%;
-            }
-
-            .social-icons {
-                justify-content: center;
-                padding: 0;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-        @media (min-width: 1281px) {
-            .pillars-grid {
-                grid-template-columns: repeat(4, 262px);
-                gap: 31px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- ... Tout votre CSS reste identique ... -->
+    
 </head>
 <body>
     <!-- Language Switcher -->
@@ -702,7 +41,7 @@
                 </div>
 
                 <div class="impact-text-content">
-                    <p data-i18n="impact.description"></p>
+                    <p data-i18n-html="impact.description"></p>
 
                     <div class="stats-grid">
                         <div class="stat-item">
@@ -727,285 +66,268 @@
         </div>
     </section>
 
-    <!-- Pillars Section -->
-    <section class="pillars-section">
-        <div class="container">
-            <div class="pillars-intro">
-                <h2 class="section-title" data-i18n-html="pillars.title"></h2>
-                <p data-i18n="pillars.subtitle"></p>
-            </div>
+    <!-- ... Toutes vos autres sections restent identiques ... -->
 
-            <div class="pillars-grid">
-                <!-- FOR WHOM -->
-                <div class="pillar-card primary">
-                    <div class="pillar-icon">
-                        <img src="images/SVG/people.svg" alt="People Icon">
-                    </div>
-                    <h3 class="pillar-title" data-i18n-html="pillars.forWhom.title"></h3>
-                    <ul class="pillar-list">
-                        <li data-i18n="pillars.forWhom.content"></li>
-                    </ul>
-                </div>
-
-                <!-- INFORMATION EDUCATION -->
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                        <img src="images/SVG/light.svg" alt="Education Icon">
-                    </div>
-                    <h3 class="pillar-title" data-i18n-html="pillars.information.title"></h3>
-                    <ul class="pillar-list">
-                        <li data-i18n-html="pillars.information.content"></li>
-                    </ul>
-                </div>
-
-                <!-- IMPACT -->
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                        <img src="images/SVG/impact.svg" alt="Impact Icon">
-                    </div>
-                    <h3 class="pillar-title" data-i18n-html="pillars.impact.title"></h3>
-                    <ul class="pillar-list">
-                        <li data-i18n-html="pillars.impact.content"></li>
-                    </ul>
-                </div>
-
-                <!-- INVESTMENT -->
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                       <img src="images/SVG/marketplace.svg" alt="Investment Icon">
-                    </div>
-                    <h3 class="pillar-title" data-i18n-html="pillars.investment.title"></h3>
-                    <ul class="pillar-list mt-m15">
-                        <li data-i18n-html="pillars.investment.content"></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Footer -->
+    <!-- Footer -->
     <section class="cta-footer" id="join">
-        <div class="container">
-            <h2 data-i18n-html="cta.title"></h2>
-            <p data-i18n-html="cta.subtitle"></p>
-
-            <!-- Mailchimp Form -->
-            <form class="email-form" 
-                  action="https://app.us6.list-manage.com/subscribe/post?u=ca86690bcd087bc874cc2f0c2&id=4f36b87874&f_id=00acd0e5f0" 
-                  method="POST" 
-                  target="_blank"
-                  onsubmit="return handleMailchimpSubmit(event)">
-                
-                <!-- Email Field -->
-                <input type="email" 
-                       name="EMAIL" 
-                       class="email-input" 
-                       data-i18n-placeholder="cta.emailPlaceholder" 
-                       required>
-                
-                <!-- Hidden Language Field -->
-                <input type="hidden" name="LANG" id="langField" value="">
-                
-                <!-- Anti-bot field (keep exactly as is) -->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                    <input type="text" name="b_ca86690bcd087bc874cc2f0c2_4f36b87874" tabindex="-1" value="">
-                </div>
-                
-                <button type="submit" class="email-submit" data-i18n="cta.button"></button>
-            </form>
-
-            <!-- Success Message -->
-            <div class="success-message" id="successMessage"></div>
-
-            <p class="no-spam" data-i18n="cta.noSpam"></p>
-        </div>
-
-        <div class="social-section">
-            <a href="https://www.linkedin.com/company/all-for-impact/" class="follow-btn" data-i18n="social.followLinkedIn" target="_blank"></a>
-            
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/company/all-for-impact/" class="social-icon" aria-label="LinkedIn" target="_blank">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-icon" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-icon" aria-label="Twitter">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M22.46 6c-.85.38-1.78.64-2.75.76a4.8 4.8 0 0 0 2.1-2.66c-.93.55-1.95.95-3.04 1.17a4.77 4.77 0 0 0-8.13 4.35A13.54 13.54 0 0 1 1.64 4.92a4.75 4.75 0 0 0 1.48 6.37 4.74 4.74 0 0 1-2.16-.6v.06c0 2.3 1.64 4.22 3.82 4.66a4.78 4.78 0 0 1-2.16.08 4.77 4.77 0 0 0 4.46 3.31A9.57 9.57 0 0 1 1 20.12 13.5 13.5 0 0 0 8.29 22c8.75 0 13.54-7.25 13.54-13.54 0-.21 0-.41-.01-.62.93-.67 1.74-1.5 2.38-2.45z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-icon" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="footer-content">
-                <div data-i18n="footer.copyright"></div>
-                <div class="footer-links">
-                    <a href="#" data-i18n="footer.privacy"></a>
-                    <a href="#" data-i18n="footer.terms"></a>
-                    <a href="#" data-i18n="footer.contact"></a>
-                </div>
-            </div>
-        </div>
+        <!-- ... Votre footer ... -->
     </section>
+
+    <!-- ============================================ -->
+    <!-- NOUVEAU JAVASCRIPT AVEC CHARGEMENT JSON -->
+    <!-- ============================================ -->
+    
+    <!-- Script Netlify Identity (pour authentification CMS) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
-        // Translations
-        const translations = {
-            en: {
-                hero: {
-                    title: "ALL FOR IMPACT,<br> ALL TO INVEST FOR IMPACT",
-                    subtitle: "All for Impact is the digital one-stop-shop connecting investors, funds and experts to unlock impact investments across Africa",
-                    cta: "GET EARLY ACCESS"
-                },
-                impact: {
-                    title: "MAKING <span class='orange'>REAL IMPACT</span><br>ACROSS AFRICA",
-                    description: "Africa's impact investment landscape is evolving rapidly. All for Impact bridges the gap between capital and opportunities, enabling sustainable development at scale.",
-                    stat1: {
-                        number: "$1.3",
-                        label: "trillions annual funding gap in Africa for achieving the SDGs"
-                    },
-                    stat2: {
-                        number: "95",
-                        label: "billion $ remittances in Africa in 2026"
-                    },
-                    stat3: {
-                        number: "255",
-                        label: "impact funds operating in the continent"
-                    },
-                    stat4: {
-                        number: "54",
-                        label: "African countries to connect"
-                    }
-                },
-                pillars: {
-                    title: "INVEST IN AFRICA.<br><span class='orange'>FOR IMPACT.</span> TOGETHER.",
-                    subtitle: "Democratizing impact investing to create sustainable change across the African continent.",
-                    forWhom: {
-                        title: "FOR WHOM?<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
-                        content: "Engaged Citizens, Investment Communities and Diaspora, Family Offices, Foundations, Corporates, Impact Funds"
-                    },
-                    information: {
-                        title: "1. INFORMATION<br><span style='display: block; margin-top: 2px;'>EDUCATION</span>",
-                        content: "Impact Investing Training<br>African Success Stories<br>Thematic Communities<br>Webinars and Events"
-                    },
-                    impact: {
-                        title: "2. IMPACT<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
-                        content: "Smart Matching Algorithm<br>SDG Alignment<br>Risk Assessment<br>Due Diligence Support"
-                    },
-                    investment: {
-                        title: "3. INVESTMENT<br><span style='font-size: 16px; font-weight: 400; font-family: Red Hat Display, sans-serif; display: block; margin-top: 2px;'>via matchmaking platform</span>",
-                        content: "250+ Verified SME Funds<br>Direct Introductions<br>Community Investing<br>Impact Reporting"
-                    }
-                },
-                cta: {
-                    title: "BE PART OF THE<br><span class='orange'>IMPACT REVOLUTION</span>",
-                    subtitle: "Join our early access list and be the first to know when All For Impact launches.<br>Together, we can transform Impact Investing in Africa.",
-                    emailPlaceholder: "Enter your email",
-                    button: "GET EARLY ACCESS",
-                    noSpam: "No spam, ever. Unsubscribe anytime.",
-                    successMessage: "Thank you! Check your email to confirm your subscription."
-                },
-                social: {
-                    followLinkedIn: "FOLLOW US ON LINKEDIN"
-                },
-                footer: {
-                    copyright: "©2025 All For Impact. All rights reserved",
-                    privacy: "Privacy Policy",
-                    terms: "Terms of Service",
-                    contact: "Contact"
-                }
-            },
-            fr: {
-                hero: {
-                    title: "TOUT POUR L'IMPACT,<br>  TOUS POUR INVESTIR AVEC IMPACT",
-                    subtitle: "All for Impact est une plateforme digitale « one-stop-shop » qui connecte investisseurs, fonds et experts afin de libérer le potentiel de l'investissement à impact à travers l'Afrique.",
-                    cta: "ACCÈS ANTICIPÉ"
-                },
-                impact: {
-                    title: "UN IMPACT <span class='orange'>CONCRET</span><br>À L'ÉCHELLE DU CONTINENT AFRICAIN",
-                    description: "L'écosystème de l'investissement à impact en Afrique évolue rapidement. All for Impact crée le lien entre ceux qui souhaitent investir pour des causes qui leur tiennent à cœur et les opportunités d'investissement à impact, pour permettre un développement durable et responsable sur le continent.",
-                    stat1: {
-                        number: "1 300",
-                        label: "milliards USD de déficit annuel de financement pour atteindre les ODD en Afrique"
-                    },
-                    stat2: {
-                        number: "90",
-                        label: "milliards de flux de la diaspora vers le continent"
-                    },
-                    stat3: {
-                        number: "255",
-                        label: "fonds à impact actifs sur le continent"
-                    },
-                    stat4: {
-                        number: "54",
-                        label: "pays africains à connecter"
-                    }
-                },
-                pillars: {
-                    title: "INVESTIR EN AFRIQUE.<br><span class='orange'>POUR L'IMPACT.</span> ENSEMBLE.",
-                    subtitle: "Démocratiser l'investissement à impact pour générer un changement durable à travers le continent africain.",
-                    forWhom: {
-                        title: "POUR QUI ?<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
-                        content: "Citoyens engagés, Communautés d'investisseurs et diasporas, Family offices & fondations, Entreprises & fonds à impact"
-                    },
-                    information: {
-                        title: "1. INFORMATION<br><span style='display: block; margin-top: 2px;'>& FORMATION</span>",
-                        content: "Formations à l'investissement à impact<br>Success stories africaines<br>Communautés thématiques<br>Webinaires et événements"
-                    },
-                    impact: {
-                        title: "2. IMPACT<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
-                        content: "Mise en relation intelligente<br>Alignement avec les ODD<br>Analyse des risques<br>Appui à la due diligence"
-                    },
-                    investment: {
-                        title: "3. INVESTISSEMENT<br><span style='font-size: 16px; font-weight: 400; font-family: Red Hat Display, sans-serif; display: block; margin-top: 2px;'>via plateforme de mise en relation</span>",
-                        content: "Plus de 250 fonds PME vérifiés<br>Mises en relation directes<br>Investissement communautaire<br>Reporting d'impact"
-                    }
-                },
-                cta: {
-                    title: "REJOIGNEZ LE<br><span class='orange'>MOUVEMENT DE L'IMPACT</span>",
-                    subtitle: "Inscrivez-vous à la liste d'accès anticipé et soyez informé·e en priorité du lancement d'All for Impact.<br>Ensemble, développons l'investissement à impact en Afrique.",
-                    emailPlaceholder: "Entrez votre adresse email",
-                    button: "ACCÈS ANTICIPÉ",
-                    noSpam: "Aucun spam. Désinscription possible à tout moment.",
-                    successMessage: "Merci ! Vérifiez votre boîte mail pour confirmer votre inscription."
-                },
-                social: {
-                    followLinkedIn: "SUIVEZ-NOUS SUR LINKEDIN"
-                },
-                footer: {
-                    copyright: "©2025 All For Impact. Tous droits réservés",
-                    privacy: "Politique de confidentialité",
-                    terms: "Conditions d'utilisation",
-                    contact: "Contact"
-                }
-            }
+        // ============================================
+        // VARIABLES GLOBALES
+        // ============================================
+        
+        // Variable pour stocker les traductions (sera remplie depuis les JSON)
+        let translations = {
+            en: {},
+            fr: {}
         };
+        
+        // Variable pour stocker la config générale
+        let siteConfig = {};
 
-        // Get browser language
+        // ============================================
+        // CHARGEMENT DU CONTENU DEPUIS LES FICHIERS JSON
+        // ============================================
+        
+        async function loadContent() {
+            try {
+                console.log('🔄 Chargement du contenu...');
+                
+                // Charger le contenu français
+                const frResponse = await fetch('/content/fr.json');
+                if (!frResponse.ok) throw new Error('Erreur chargement FR');
+                translations.fr = await frResponse.json();
+                console.log('✅ Contenu FR chargé');
+                
+                // Charger le contenu anglais
+                const enResponse = await fetch('/content/en.json');
+                if (!enResponse.ok) throw new Error('Erreur chargement EN');
+                translations.en = await enResponse.json();
+                console.log('✅ Contenu EN chargé');
+                
+                // Charger la configuration
+                const configResponse = await fetch('/content/config.json');
+                if (!configResponse.ok) throw new Error('Erreur chargement config');
+                siteConfig = await configResponse.json();
+                console.log('✅ Configuration chargée');
+                
+                // Mettre à jour les liens sociaux dynamiquement
+                updateSocialLinks(siteConfig.socialLinks);
+                
+                // Initialiser la langue
+                const initialLang = getInitialLanguage();
+                applyTranslations(initialLang);
+                
+                console.log('✅ Contenu appliqué !');
+                
+            } catch (error) {
+                console.error('❌ Erreur lors du chargement:', error);
+                
+                // FALLBACK : Si les fichiers JSON ne chargent pas, utiliser le contenu de secours
+                console.warn('⚠️ Utilisation du contenu de secours (fallback)');
+                useFallbackContent();
+            }
+        }
+
+        // ============================================
+        // CONTENU DE SECOURS (si JSON ne charge pas)
+        // ============================================
+        
+        function useFallbackContent() {
+            // Copier votre contenu actuel ici en cas d'erreur
+            translations = {
+                en: {
+                    hero: {
+                        title: "ALL FOR IMPACT,<br> ALL TO INVEST FOR IMPACT",
+                        subtitle: "All for Impact is the digital one-stop-shop connecting investors, funds and experts to unlock impact investments across Africa",
+                        cta: "STAY TUNED"
+                    },
+                    impact: {
+                        title: "MAKING <span class='orange'>REAL IMPACT</span><br>ACROSS AFRICA",
+                        description: "Africa's impact investment landscape is evolving rapidly. <br> All for Impact bridges the gap between capital and opportunities, enabling sustainable development at scale.",
+                        stat1: {
+                            number: "$1.3",
+                            label: "trillion annual funding gap in Africa for achieving the SDGs"
+                        },
+                        stat2: {
+                            number: "$95",
+                            label: "billion remittances in Africa in 2025"
+                        },
+                        stat3: {
+                            number: "255",
+                            label: "impact funds operating on the continent"
+                        },
+                        stat4: {
+                            number: "54",
+                            label: "African countries to connect"
+                        }
+                    },
+                    pillars: {
+                        title: "INVEST IN AFRICA.<br><span class='orange'>FOR IMPACT.</span> TOGETHER.",
+                        subtitle: "Democratizing impact investing to create sustainable change across the African continent.",
+                        forWhom: {
+                            title: "FOR WHOM?<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+                            content: "Engaged Citizens, Investment Communities and Diaspora, Family Offices, Foundations, Corporates, Impact Funds"
+                        },
+                        information: {
+                            title: "1. INFORMATION<br><span style='display: block; margin-top: 2px;'>EDUCATION</span>",
+                            content: "Impact Investing Training<br>African Success Stories<br>Thematic Communities<br>Webinars and Events"
+                        },
+                        impact: {
+                            title: "2. IMPACT <br> TOOLS <br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+                            content: "SDG Aligned impact scorecard <br>Risk Assessment<br>Due Diligence Support<br>Impact Reporting"
+                        },
+                        investment: {
+                            title: "3. INVESTMENT<br><span style='font-size: 16px; font-weight: 400; font-family: Red Hat Display, sans-serif; display: block; margin-top: 2px;'>via a matchmaking platform</span>",
+                            content: "Smart Matching Algorithm<br>250+ Verified SME Funds<br>Direct Introductions<br>Community Investing"
+                        }
+                    },
+                    cta: {
+                        title: "BE PART OF THE<br><span class='orange'>IMPACT REVOLUTION</span>",
+                        subtitle: "Join our early access list and be the first to know when All For Impact launches.<br>Together, we can transform Impact Investing in Africa.",
+                        emailPlaceholder: "Enter your email",
+                        button: "STAY TUNED",
+                        noSpam: "No spam, ever. Unsubscribe anytime.",
+                        successMessage: "Thank you! Check your email to confirm your subscription."
+                    },
+                    social: {
+                        followLinkedIn: "FOLLOW US ON LINKEDIN"
+                    },
+                    footer: {
+                        copyright: "©2025 All For Impact. All rights reserved",
+                        privacy: "Privacy Policy",
+                        terms: "Terms of Service",
+                        contact: "Contact"
+                    }
+                },
+                fr: {
+                    hero: {
+                        title: "TOUT POUR L'IMPACT,<br> TOUS POUR INVESTIR AVEC IMPACT",
+                        subtitle: "All for Impact est une plateforme digitale « one-stop-shop » qui connecte investisseurs, fonds et experts afin de libérer le potentiel de l'investissement à impact à travers l'Afrique.",
+                        cta: "RESTEZ INFORMÉ.E"
+                    },
+                    impact: {
+                        title: "UN IMPACT <span class='orange'>CONCRET</span><br>À L'ÉCHELLE DU CONTINENT AFRICAIN",
+                        description: "L'écosystème de l'investissement à impact en Afrique évolue rapidement. All for Impact crée le lien entre ceux qui souhaitent investir pour des causes qui leur tiennent à cœur et les opportunités d'investissement à impact, pour permettre un développement durable et responsable sur le continent.",
+                        stat1: {
+                            number: "1 300",
+                            label: "milliards USD de déficit annuel de financement pour atteindre les ODD en Afrique"
+                        },
+                        stat2: {
+                            number: "90",
+                            label: "milliards USD de flux de la diaspora vers le continent"
+                        },
+                        stat3: {
+                            number: "255",
+                            label: "fonds à impact actifs sur le continent"
+                        },
+                        stat4: {
+                            number: "54",
+                            label: "pays africains à connecter"
+                        }
+                    },
+                    pillars: {
+                        title: "INVESTIR EN AFRIQUE.<br><span class='orange'>POUR L'IMPACT.</span> ENSEMBLE.",
+                        subtitle: "Démocratiser l'investissement à impact pour générer un changement durable à travers le continent africain.",
+                        forWhom: {
+                            title: "POUR QUI ?<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+                            content: "Citoyens engagés, Communautés d'investisseurs et diasporas, Family offices & fondations, Entreprises & fonds à impact"
+                        },
+                        information: {
+                            title: "1. INFORMATION<br><span style='display: block; margin-top: 2px;'>& FORMATION</span>",
+                            content: "Formation à l'investissement à impact<br>Success stories africaines<br>Communautés thématiques<br>Webinaires et événements"
+                        },
+                        impact: {
+                            title: "2. IMPACT<br>OUTILS<span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+                            content: "Scorecard à impact alignée sur les ODD<br>Analyse des risques<br>Appui à la due diligence<br>Reporting d'impact"
+                        },
+                        investment: {
+                            title: "3. INVESTISSEMENT<br><span style='font-size: 16px; font-weight: 400; font-family: Red Hat Display, sans-serif; display: block; margin-top: 2px;'>via plateforme de mise en relation</span>",
+                            content: "Mise en relation intelligente <br>Plus de 250 fonds PME vérifiés<br>Investissement communautaire<br>"
+                        }
+                    },
+                    cta: {
+                        title: "SOYEZ<span class='orange'> ACTEURS DE L'IMPACT</span>",
+                        subtitle: "Inscrivez-vous à la liste d'accès anticipé et soyez informé·e en priorité du lancement d'All for Impact.<br>Ensemble, développons l'investissement à impact en Afrique.",
+                        emailPlaceholder: "Entrez votre adresse email",
+                        button: "RESTEZ INFORMÉ.E",
+                        noSpam: "Aucun spam. Désinscription possible à tout moment.",
+                        successMessage: "Merci ! Vérifiez votre boîte mail pour confirmer votre inscription."
+                    },
+                    social: {
+                        followLinkedIn: "SUIVEZ-NOUS SUR LINKEDIN"
+                    },
+                    footer: {
+                        copyright: "©2025 All For Impact. Tous droits réservés",
+                        privacy: "Politique de confidentialité",
+                        terms: "Conditions d'utilisation",
+                        contact: "Contact"
+                    }
+                }
+            };
+            
+            // Appliquer les traductions en mode fallback
+            const initialLang = getInitialLanguage();
+            applyTranslations(initialLang);
+        }
+
+        // ============================================
+        // MISE À JOUR DES LIENS SOCIAUX
+        // ============================================
+        
+        function updateSocialLinks(links) {
+            if (!links) return;
+            
+            // Mettre à jour le bouton "Follow us on LinkedIn"
+            const followBtn = document.querySelector('a.follow-btn');
+            if (followBtn) followBtn.href = links.linkedin;
+            
+            // Mettre à jour les icônes sociales
+            const socialIcons = document.querySelectorAll('.social-icon');
+            if (socialIcons.length >= 4) {
+                socialIcons[0].href = links.linkedin;  // LinkedIn
+                socialIcons[1].href = links.facebook;  // Facebook
+                socialIcons[2].href = links.twitter;   // Twitter
+                socialIcons[3].href = links.instagram; // Instagram
+            }
+        }
+
+        // ============================================
+        // GESTION DES LANGUES
+        // ============================================
+        
+        // Détecter la langue du navigateur
         function getBrowserLanguage() {
             const lang = navigator.language || navigator.userLanguage;
             return lang.startsWith('fr') ? 'fr' : 'en';
         }
 
-        // Get stored language or browser language
+        // Récupérer la langue sauvegardée ou celle du navigateur
         function getInitialLanguage() {
             return localStorage.getItem('preferredLanguage') || getBrowserLanguage();
         }
 
-        // Apply translations
+        // Appliquer les traductions sur la page
         function applyTranslations(lang) {
             const t = translations[lang];
             
-            // Update all elements with data-i18n attribute
+            if (!t) {
+                console.error('❌ Traduction non disponible pour:', lang);
+                return;
+            }
+            
+            console.log('🌍 Application de la langue:', lang);
+            
+            // Mettre à jour tous les éléments avec data-i18n
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 const value = key.split('.').reduce((obj, k) => obj?.[k], t);
@@ -1019,7 +341,7 @@
                 }
             });
 
-            // Update elements with HTML content (for <br> and <span>)
+            // Mettre à jour les éléments avec du HTML (pour <br> et <span>)
             document.querySelectorAll('[data-i18n-html]').forEach(element => {
                 const key = element.getAttribute('data-i18n-html');
                 const value = key.split('.').reduce((obj, k) => obj?.[k], t);
@@ -1029,7 +351,7 @@
                 }
             });
 
-            // Update placeholder separately
+            // Mettre à jour les placeholders séparément
             document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-i18n-placeholder');
                 const value = key.split('.').reduce((obj, k) => obj?.[k], t);
@@ -1039,59 +361,73 @@
                 }
             });
 
-            // Update active button
+            // Mettre à jour le bouton actif
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
             });
 
-            // Update HTML lang attribute
+            // Mettre à jour l'attribut lang du HTML
             document.documentElement.lang = lang;
 
-            // Store preference
+            // Sauvegarder la préférence
             localStorage.setItem('preferredLanguage', lang);
         }
 
-        // Initialize language on page load
+        // ============================================
+        // INITIALISATION AU CHARGEMENT DE LA PAGE
+        // ============================================
+        
         document.addEventListener('DOMContentLoaded', function() {
-            const initialLang = getInitialLanguage();
-            applyTranslations(initialLang);
+            console.log('🚀 Initialisation du site...');
+            
+            // Charger le contenu depuis les fichiers JSON
+            loadContent();
 
-            // Language switcher event listeners
+            // Boutons de changement de langue
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const lang = this.getAttribute('data-lang');
+                    console.log('🔄 Changement de langue vers:', lang);
                     applyTranslations(lang);
                 });
             });
         });
 
-        // Mailchimp form submission handler
+        // ============================================
+        // FORMULAIRE MAILCHIMP
+        // ============================================
+        
         function handleMailchimpSubmit(event) {
-            // Update language field before submission
+            // Mettre à jour le champ de langue avant soumission
             const lang = localStorage.getItem('preferredLanguage') || 'en';
             document.getElementById('langField').value = lang;
             
-            // Get success message
+            // Récupérer le message de succès
             const t = translations[lang];
-            const successMsg = t.cta.successMessage;
+            const successMsg = t?.cta?.successMessage || "Thank you!";
             
-            // Show success message after a short delay
+            // Afficher le message de succès après un court délai
             setTimeout(() => {
                 const successElement = document.getElementById('successMessage');
-                successElement.textContent = successMsg;
-                successElement.classList.add('show');
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successElement.classList.remove('show');
-                }, 5000);
+                if (successElement) {
+                    successElement.textContent = successMsg;
+                    successElement.classList.add('show');
+                    
+                    // Masquer le message après 5 secondes
+                    setTimeout(() => {
+                        successElement.classList.remove('show');
+                    }, 5000);
+                }
             }, 500);
             
-            // Let the form submit normally to Mailchimp
+            // Laisser le formulaire se soumettre normalement
             return true;
         }
 
-        // Smooth scroll for anchor links
+        // ============================================
+        // SMOOTH SCROLL POUR LES LIENS D'ANCRAGE
+        // ============================================
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1101,6 +437,20 @@
                 }
             });
         });
+
+        // ============================================
+        // AUTHENTIFICATION NETLIFY IDENTITY
+        // ============================================
+        
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>

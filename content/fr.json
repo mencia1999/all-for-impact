@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "title": "TOUT POUR L'IMPACT,<br> TOUS POUR INVESTIR AVEC IMPACT",
+    "subtitle": "All for Impact est une plateforme digitale « one-stop-shop » qui connecte investisseurs, fonds et experts afin de libérer le potentiel de l'investissement à impact à travers l'Afrique.",
+    "cta": "RESTEZ INFORMÉ.E"
+  },
+  "impact": {
+    "title": "UN IMPACT <span class='orange'>CONCRET</span><br>À L'ÉCHELLE DU CONTINENT AFRICAIN",
+    "description": "L'écosystème de l'investissement à impact en Afrique évolue rapidement. All for Impact crée le lien entre ceux qui souhaitent investir pour des causes qui leur tiennent à cœur et les opportunités d'investissement à impact, pour permettre un développement durable et responsable sur le continent.",
+    "stat1": {
+      "number": "1 300",
+      "label": "milliards USD de déficit annuel de financement pour atteindre les ODD en Afrique"
+    },
+    "stat2": {
+      "number": "90",
+      "label": "milliards USD de flux de la diaspora vers le continent"
+    },
+    "stat3": {
+      "number": "255",
+      "label": "fonds à impact actifs sur le continent"
+    },
+    "stat4": {
+      "number": "54",
+      "label": "pays africains à connecter"
+    }
+  },
+  "pillars": {
+    "title": "INVESTIR EN AFRIQUE.<br><span class='orange'>POUR L'IMPACT.</span> ENSEMBLE.",
+    "subtitle": "Démocratiser l'investissement à impact pour générer un changement durable à travers le continent africain.",
+    "forWhom": {
+      "title": "POUR QUI ?<br><span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+      "content": "Citoyens engagés, Communautés d'investisseurs et diasporas, Family offices & fondations, Entreprises & fonds à impact"
+    },
+    "information": {
+      "title": "1. INFORMATION<br><span style='display: block; margin-top: 2px;'>& FORMATION</span>",
+      "content": "Formation à l'investissement à impact<br>Success stories africaines<br>Communautés thématiques<br>Webinaires et événements"
+    },
+    "impact": {
+      "title": "2. IMPACT<br>OUTILS<span style='display: block; margin-top: 2px; opacity: 0;'>.</span>",
+      "content": "Scorecard à impact alignée sur les ODD<br>Analyse des risques<br>Appui à la due diligence<br>Reporting d'impact"
+    },
+    "investment": {
+      "title": "3. INVESTISSEMENT<br><span style='font-size: 16px; font-weight: 400; font-family: Red Hat Display, sans-serif; display: block; margin-top: 2px;'>via plateforme de mise en relation</span>",
+      "content": "Mise en relation intelligente <br>Plus de 250 fonds PME vérifiés<br>Investissement communautaire<br>"
+    }
+  },
+  "cta": {
+    "title": "SOYEZ<span class='orange'> ACTEURS DE L'IMPACT</span>",
+    "subtitle": "Inscrivez-vous à la liste d'accès anticipé et soyez informé·e en priorité du lancement d'All for Impact.<br>Ensemble, développons l'investissement à impact en Afrique.",
+    "emailPlaceholder": "Entrez votre adresse email",
+    "button": "RESTEZ INFORMÉ.E",
+    "noSpam": "Aucun spam. Désinscription possible à tout moment.",
+    "successMessage": "Merci ! Vérifiez votre boîte mail pour confirmer votre inscription."
+  },
+  "social": {
+    "followLinkedIn": "SUIVEZ-NOUS SUR LINKEDIN"
+  },
+  "footer": {
+    "copyright": "©2025 All For Impact. Tous droits réservés",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "contact": "Contact"
+  }
+}
