@@ -1,8 +1,9 @@
 {
   "siteName": "All For Impact",
-  "siteUrl": "all-for-impact-mockup.netlify.app",
+  "siteUrl": "https://all-for-impact-mockup.netlify.app",
   "seoDescription": "The digital one-stop-shop for impact investing in Africa",
   "mailchimpEmail": "contact@allforimpact.com",
+  "mailchimpUrl": "https://app.us6.list-manage.com/subscribe/post?u=ca86690bcd087bc874cc2f0c2&id=4f36b87874&f_id=00acd0e5f0",
   "socialLinks": {
     "linkedin": "https://www.linkedin.com/company/all-for-impact/",
     "facebook": "#",

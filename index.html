@@ -66,11 +66,130 @@
         </div>
     </section>
 
-    <!-- ... Toutes vos autres sections restent identiques ... -->
+    <section class="pillars-section">
+    <div class="container">
+        <div class="pillars-intro">
+            <h2 class="section-title" data-i18n-html="pillars.title"></h2>
+            <p class="pillars-subtitle" data-i18n-html="pillars.subtitle"></p>
+        </div>
+        <div class="pillars-grid">
+            <!-- FOR WHOM -->
+            <div class="pillar-card primary">
+                <div class="pillar-icon">
+                    <img src="images/SVG/people.svg" alt="People Icon">
+                </div>
+                <h3 class="pillar-title" data-i18n-html="pillars.forWhom.title"></h3>
+                <ul class="pillar-list">
+                    <li data-i18n-html="pillars.forWhom.content"></li>
+                </ul>
+            </div>
+
+            <!-- INFORMATION EDUCATION -->
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <img src="images/SVG/light.svg" alt="Education Icon">
+                </div>
+                <h3 class="pillar-title" data-i18n-html="pillars.information.title"></h3>
+                <ul class="pillar-list">
+                    <li data-i18n-html="pillars.information.content"></li>
+                </ul>
+            </div>
+
+            <!-- IMPACT -->
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <img src="images/SVG/impact.svg" alt="Impact Icon">
+                </div>
+                <h3 class="pillar-title" data-i18n-html="pillars.impact.title"></h3>
+                <ul class="pillar-list">
+                    <li data-i18n-html="pillars.impact.content"></li>
+                </ul>
+            </div>
+
+            <!-- INVESTMENT -->
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <img src="images/SVG/marketplace.svg" alt="Investment Icon">
+                </div>
+                <h3 class="pillar-title" data-i18n-html="pillars.investment.title"></h3>
+                <ul class="pillar-list mt-m15">
+                    <li data-i18n-html="pillars.investment.content"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <section class="cta-footer" id="join">
-        <!-- ... Votre footer ... -->
+        <div class="cta-content">
+            <h2 data-i18n-html="cta.title"></h2>
+            <p data-i18n-html="cta.subtitle"></p>
+
+            <!-- Formulaire Mailchimp -->
+             <form class="email-form" 
+                  method="POST" 
+                  target="_blank"
+                  onsubmit="return handleMailchimpSubmit(event)">
+                
+                <!-- Email Field -->
+                <input type="email" 
+                       name="EMAIL" 
+                       class="email-input" 
+                       data-i18n-placeholder="cta.emailPlaceholder" 
+                       required>
+                
+                <!-- Hidden Language Field -->
+                <input type="hidden" name="LANG" id="langField" value="">
+                
+                <!-- Anti-bot field (keep exactly as is) -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_ca86690bcd087bc874cc2f0c2_4f36b87874" tabindex="-1" value="">
+                </div>
+                
+                <button type="submit" class="email-submit" data-i18n="cta.button"></button>
+            </form>
+             <!-- Success Message -->
+            <div class="success-message" id="successMessage"></div>
+            <p class="no-spam" data-i18n="cta.noSpam"></p>
+        </div>
+
+        <div class="social-section">
+            <a href="https://www.linkedin.com/company/all-for-impact/" 
+            class="follow-btn" data-i18n="social.followLinkedIn" target="_blank"></a>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/all-for-impact/" class="social-icon" aria-label="LinkedIn" target="_blank">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22.46 6c-.85.38-1.78.64-2.75.76a4.8 4.8 0 0 0 2.1-2.66c-.93.55-1.95.95-3.04 1.17a4.77 4.77 0 0 0-8.13 4.35A13.54 13.54 0 0 1 1.64 4.92a4.75 4.75 0 0 0 1.48 6.37 4.74 4.74 0 0 1-2.16-.6v.06c0 2.3 1.64 4.22 3.82 4.66a4.78 4.78 0 0 1-2.16.08 4.77 4.77 0 0 0 4.46 3.31A9.57 9.57 0 0 1 1 20.12 13.5 13.5 0 0 0 8.29 22c8.75 0 13.54-7.25 13.54-13.54 0-.21 0-.41-.01-.62.93-.67 1.74-1.5 2.38-2.45z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer-content">
+                <div data-i18n="footer.copyright"></div>
+                <div class="footer-links">
+                    <a href="#" data-i18n="footer.privacy"></a>
+                    <a href="#" data-i18n="footer.terms"></a>
+                    <a href="#" data-i18n="footer.contact"></a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ============================================ -->
@@ -103,41 +222,39 @@
         
         async function loadContent() {
             try {
-                console.log('🔄 Chargement du contenu...');
-                
+             
                 // Charger le contenu français
                 const frResponse = await fetch('/content/fr.json');
                 if (!frResponse.ok) throw new Error('Erreur chargement FR');
                 translations.fr = await frResponse.json();
-                console.log('✅ Contenu FR chargé');
+               
                 
                 // Charger le contenu anglais
                 const enResponse = await fetch('/content/en.json');
                 if (!enResponse.ok) throw new Error('Erreur chargement EN');
                 translations.en = await enResponse.json();
-                console.log('✅ Contenu EN chargé');
+               
                 
                 // Charger la configuration
                 const configResponse = await fetch('/content/config.json');
                 if (!configResponse.ok) throw new Error('Erreur chargement config');
                 siteConfig = await configResponse.json();
-                console.log('✅ Configuration chargée');
+        
                 // Charger les images
                 const imagesResponse = await fetch('/content/images.json');
                 siteImages = await imagesResponse.json();
-                console.log('✅ Images chargées');
+
 
                 // Mettre à jour les images dynamiquement
                 updateImages(siteImages);
-                
+                updateConfig(siteConfig);
                 // Mettre à jour les liens sociaux dynamiquement
                 updateSocialLinks(siteConfig.socialLinks);
                 
                 // Initialiser la langue
                 const initialLang = getInitialLanguage();
                 applyTranslations(initialLang);
-                
-                console.log('✅ Contenu appliqué !');
+            
                 
             } catch (error) {
                 console.error('❌ Erreur lors du chargement:', error);
@@ -290,33 +407,53 @@
             applyTranslations(initialLang);
         }
         function updateImages(images) {
-    if (!images) return;
-    
-    // Logo
-    const logoImg = document.querySelector('.logo img');
-    if (logoImg && images.logo) logoImg.src = images.logo;
-    
-    // Image hero (fond - si vous voulez le rendre dynamique)
-    const heroSection = document.querySelector('.hero');
-    if (heroSection && images.hero) {
-        heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url('${images.hero}')`;
-    }
-    
-    // Image des enfants
-    const kidsImg = document.querySelector('.impact-image');
-    if (kidsImg && images.kids) kidsImg.src = images.kids;
-    
-    // Icônes des piliers
-    if (images.pillars_icons) {
-        const pillarsIcons = document.querySelectorAll('.pillar-icon img');
-        if (pillarsIcons.length >= 4) {
-            pillarsIcons[0].src = images.pillars_icons.people;
-            pillarsIcons[1].src = images.pillars_icons.light;
-            pillarsIcons[2].src = images.pillars_icons.impact;
-            pillarsIcons[3].src = images.pillars_icons.marketplace;
+            if (!images) return;
+            
+            // Logo
+            const logoImg = document.querySelector('.logo img');
+            if (logoImg && images.logo) logoImg.src = images.logo;
+            
+            // Image hero (fond - si vous voulez le rendre dynamique)
+            const heroSection = document.querySelector('.hero');
+            if (heroSection && images.hero) {
+                heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url('${images.hero}')`;
+            }
+            
+            // Image des enfants
+            const kidsImg = document.querySelector('.impact-image');
+            if (kidsImg && images.kids) kidsImg.src = images.kids;
+            
+            // Icônes des piliers
+            if (images.pillars_icons) {
+                const pillarsIcons = document.querySelectorAll('.pillar-icon img');
+                if (pillarsIcons.length >= 4) {
+                    pillarsIcons[0].src = images.pillars_icons.people;
+                    pillarsIcons[1].src = images.pillars_icons.light;
+                    pillarsIcons[2].src = images.pillars_icons.impact;
+                    pillarsIcons[3].src = images.pillars_icons.marketplace;
+                }
+            }
         }
-    }
-}
+        function updateConfig(config) {
+            if (!config) return;
+
+            // Mettre à jour l'URL Mailchimp
+            const form = document.getElementById('mailchimpForm');
+            if (form && config.mailchimpUrl) {
+                form.action = config.mailchimpUrl;
+            }
+
+            // SEO - meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc && config.seoDescription) {
+                metaDesc.setAttribute('content', config.seoDescription);
+            }
+
+            // Titre de la page
+            if (config.siteName) {
+                document.title = config.siteName + " - Impact Investment Platform for Africa";
+            }
+        }
         // ============================================
         // MISE À JOUR DES LIENS SOCIAUX
         // ============================================
@@ -362,7 +499,6 @@
                 return;
             }
             
-            console.log('🌍 Application de la langue:', lang);
             
             // Mettre à jour tous les éléments avec data-i18n
             document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -415,8 +551,7 @@
         // ============================================
         
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🚀 Initialisation du site...');
-            
+        
             // Charger le contenu depuis les fichiers JSON
             loadContent();
 
@@ -424,7 +559,6 @@
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const lang = this.getAttribute('data-lang');
-                    console.log('🔄 Changement de langue vers:', lang);
                     applyTranslations(lang);
                 });
             });

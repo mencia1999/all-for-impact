@@ -275,6 +275,7 @@ collections:
           - {label: "Nom du site", name: "siteName", widget: "string"}
           - {label: "URL du site", name: "siteUrl", widget: "string"}
           - {label: "Description SEO", name: "seoDescription", widget: "text"}
+          - {label: "Email Mailchimp", name: "mailchimpEmail", widget: "string", hint: "Email de contact associé au compte Mailchimp"}
           
           - label: "Réseaux Sociaux"
             name: "socialLinks"
