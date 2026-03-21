@@ -285,3 +285,20 @@ collections:
               - {label: "Facebook", name: "facebook", widget: "string"}
               - {label: "Twitter", name: "twitter", widget: "string"}
               - {label: "Instagram", name: "instagram", widget: "string"}
+  
+  - name: "banner"
+    label: "📢 Bannière À la une"
+    files:
+      - name: "banner"
+        label: "Bannière C3"
+        file: "content/banner.json"
+        fields:
+          - {label: "Activer la bannière", name: "active", widget: "boolean", default: false}
+          - {label: "Texte FR", name: "text_fr", widget: "text"}
+          - {label: "Texte EN", name: "text_en", widget: "text"}
+          - {label: "Bouton 1 - Label FR", name: "btn1_text_fr", widget: "string"}
+          - {label: "Bouton 1 - Label EN", name: "btn1_text_en", widget: "string"}
+          - {label: "Bouton 1 - URL PDF", name: "btn1_url", widget: "string"}
+          - {label: "Bouton 2 - Label FR", name: "btn2_text_fr", widget: "string"}
+          - {label: "Bouton 2 - Label EN", name: "btn2_text_en", widget: "string"}
+          - {label: "Bouton 2 - URL PDF", name: "btn2_url", widget: "string"}
