@@ -54,8 +54,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
+            background-color: #173A1B;
             background: linear-gradient(rgba(0, 0, 0, -7), rgba(0, 0, 0, 0.2)),
-                        url('images/hero.jpg') center/cover;
+                        url('images/hero.webp') center/cover;
             overflow: hidden;
         }
 
